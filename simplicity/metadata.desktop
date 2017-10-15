@@ -1,13 +1,13 @@
 [SddmGreeterTheme]
 Name=Simplicity
 
-Description=Simplicity theme based on elarun SDDM theme
+Description=Simple SDDM theme
 Type=sddm-theme
 Author=Gabriel Retana
-Copyright=(c) 2016, Gabriel Retana
+Copyright=(c) 2017, Gabriel Retana
 Screenshot=simplicity.png
 License=GPL
-Version=0.1
+Version=0.2
 MainScript=Main.qml
 ConfigFile=theme.conf
 TranslationsDirectory=translations
