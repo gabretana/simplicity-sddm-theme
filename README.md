@@ -1,10 +1,10 @@
-##Simplicity
-Simple SDDM theme based on elarun
+## Simplicity
+Simple SDDM theme
 
 ![Screenshot](http://i.imgur.com/9gz8col.png)
 
 
-###Install
+### Install
 Move simplicity folder to 
 
     /usr/share/sddm/themes
