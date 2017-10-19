@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import SddmComponents 2.0
-import "./SimpleControls"
+import "SimpleControls" as Simple
 
 Rectangle {
     
@@ -35,11 +35,11 @@ Rectangle {
         anchors.fill: parent
         color: "transparent"
         
-        SimpleClock {
+        Simple.SimpleClock {
             id: time_label
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            color: "white"
+            color: "black"
             timeFont.family: "Noto Sans"
             dateFont.family: "Noto Sans"
             timeFontSize: 16
@@ -75,7 +75,7 @@ Rectangle {
                             
                             KeyNavigation.backtab: session; KeyNavigation.tab: pw_entry
                         }*/
-                        SimpleComboBox {
+                        Simple.SimpleComboBox {
                             id: user_entry
                             anchors.verticalCenter: parent.verticalCenter
                             width: 250
@@ -187,16 +187,16 @@ Rectangle {
         anchors.top: parent.top;
         anchors.horizontalCenter: parent.horizontalCenter
         
-        SimpleComboBox {
+        Simple.SimpleComboBox {
             id: session
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
             width: 160
             color: "transparent"
-            dropDownColor: "#212121"
+            dropDownColor: "white"
             borderColor: "transparent"
-            textColor: "white"
-            arrowIcon: "images/arrow-down.png"
+            textColor: "black"
+            arrowIcon: "images/arrow-down-black.png"
             arrowColor: "transparent"
             model: sessionModel
             index: sessionModel.lastIndex
