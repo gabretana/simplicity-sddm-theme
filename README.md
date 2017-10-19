@@ -9,7 +9,7 @@ Move simplicity folder to
 
     /usr/share/sddm/themes
 
-edit file
+edit file [(See Also)](https://github.com/sddm/sddm/wiki/0.16.0-Release-Announcement#configuration)
 
     /etc/sddm.conf
 
