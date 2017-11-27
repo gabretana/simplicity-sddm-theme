@@ -35,7 +35,7 @@ Rectangle {
         anchors.fill: parent
         color: "transparent"
         
-        Simple.SimpleClock {
+        /*Simple.SimpleClock {
             id: time_label
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
@@ -44,7 +44,7 @@ Rectangle {
             dateFont.family: "Noto Sans"
             timeFontSize: 16
             dateFontSize: 12
-        }
+        }*/
         
         Rectangle {
             width: 400
@@ -56,7 +56,8 @@ Rectangle {
                 id: entries
                 width: parent.width
                 height: 200
-                color: Qt.rgba(33/255, 33/255, 33/255, 0.8)
+                //color: Qt.rgba(33/255, 33/255, 33/255, 0.8)
+                color: "transparent"
                 radius: 4
                 
                 Column {
@@ -65,17 +66,22 @@ Rectangle {
                     
                     Row {
                    
-                        /*TextBox {
+                        TextBox {
                             id: user_entry
-                            radius: 2
+                            radius: 3
                             width: 250
                             anchors.verticalCenter: parent.verticalCenter
                             text: userModel.lastUser
                             font.pixelSize: 16
+                            color: Qt.rgba(1.0, 1.0, 1.0, 0.6)
+                            borderColor: "transparent"
+                            focusColor: Qt.rgba(1.0, 1.0, 1.0, 0.7)
+                            hoverColor: Qt.rgba(1.0, 1.0, 1.0, 0.6)
+                            textColor: "white"
                             
                             KeyNavigation.backtab: session; KeyNavigation.tab: pw_entry
-                        }*/
-                        Simple.SimpleComboBox {
+                        }
+                        /*Simple.SimpleComboBox {
                             id: user_entry
                             anchors.verticalCenter: parent.verticalCenter
                             width: 250
@@ -90,21 +96,21 @@ Rectangle {
 
                             font.pixelSize: 16
                             KeyNavigation.backtab: session; KeyNavigation.tab: pw_entry
-                        }
+                        }*/
                    
                     }
                     
                     Row {
                         PasswordBox {
                             id: pw_entry
-                            radius: 2
+                            radius: 3
                             width: 250
                             anchors.verticalCenter: parent.verticalCenter;
                             font.pixelSize: 16
-                            color: "transparent"
-                            borderColor: "#9E9E9E"
-                            focusColor: "#3F51B5"
-                            hoverColor: "#3F51B5"
+                            color: Qt.rgba(1.0, 1.0, 1.0, 0.6)
+                            borderColor: "transparent"
+                            focusColor: Qt.rgba(1.0, 1.0, 1.0, 0.7)
+                            hoverColor: Qt.rgba(1.0, 1.0, 1.0, 0.6)
                             textColor: "white"
                             focus: true
                             
@@ -112,7 +118,7 @@ Rectangle {
 
                             Keys.onPressed: {
                                 if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
-                                    sddm.login(user_entry.currentText, pw_entry.text, session.index)
+                                    sddm.login(user_entry.text, pw_entry.text, session.index)
                                     event.accepted = true
                                 }
                             }
@@ -123,52 +129,15 @@ Rectangle {
                         anchors.horizontalCenter: parent.horizontalCenter
                         Button {
                             id: loginButton
+                            radius: 3
                             text: textConstants.login
                             width: 150
-                            color: "#3F51B5"
-                            activeColor: "#5C6BC0"
-                            pressedColor: "#5C6BC0"
-                            radius: 2
+                            color: Qt.rgba(1.0, 1.0, 1.0, 0.6)
+                            activeColor: Qt.rgba(1.0, 1.0, 1.0, 0.6)
+                            pressedColor: Qt.rgba(1.0, 1.0, 1.0, 0.65)
                             onClicked: sddm.login(user_entry.currentText, pw_entry.text, session.index)
                             KeyNavigation.backtab: pw_entry; KeyNavigation.tab: restart
                         }
-                    }
-                    
-                }
-                
-            }
-            
-            Rectangle {
-                anchors.top: entries.bottom
-                width: parent.width
-                height: 75
-                color: Qt.rgba(33/255, 33/255, 33/255, 0.8)
-                
-                Row {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.verticalCenter: parent.verticalCenter
-                    spacing: 10
-                    
-                    Button {
-                        id: restart
-                        text: textConstants.reboot
-                        color: "#37474F"
-                        pressedColor: "#455A64"
-                        activeColor: "#455A64"
-                        radius: 2
-                        onClicked: sddm.reboot()
-                        KeyNavigation.backtab: loginButton; KeyNavigation.tab: shutdown
-                    }
-                    
-                    Button {
-                        id: shutdown
-                        text: textConstants.shutdown
-                        color: "#37474F"
-                        pressedColor: "#455A64"
-                        activeColor: "#455A64"
-                        radius: 2
-                        onClicked: sddm.powerOff()
-                        KeyNavigation.backtab: restart; KeyNavigation.tab: session
                     }
                     
                 }
@@ -180,9 +149,45 @@ Rectangle {
     }
     
     Rectangle {
+        width: parent.width - 10
+        height: 40
+        color: "transparent"
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        
+        Button {
+            id: restart
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right
+            text: textConstants.reboot
+            color: Qt.rgba(1.0, 1.0, 1.0, 0.5)
+            pressedColor: Qt.rgba(1.0, 1.0, 1.0, 0.55)
+            activeColor: Qt.rgba(1.0, 1.0, 1.0, 0.5)
+            radius: 3
+            onClicked: sddm.reboot()
+            KeyNavigation.backtab: loginButton; KeyNavigation.tab: shutdown
+            }
+                    
+        Button {
+            id: shutdown
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: restart.left
+            anchors.rightMargin: 10
+            text: textConstants.shutdown
+            color: Qt.rgba(1.0, 1.0, 1.0, 0.5)
+            pressedColor: Qt.rgba(1.0, 1.0, 1.0, 0.55)
+            activeColor: Qt.rgba(1.0, 1.0, 1.0, 0.5)
+            radius: 3
+            onClicked: sddm.powerOff()
+            KeyNavigation.backtab: restart; KeyNavigation.tab: session
+        }
+        
+    }
+    
+    Rectangle {
         id: dateClock
         width: parent.width - 10
-        height: 30
+        height: 40
         color: "transparent"
         anchors.top: parent.top;
         anchors.horizontalCenter: parent.horizontalCenter
@@ -192,10 +197,10 @@ Rectangle {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
             width: 160
-            color: "transparent"
-            dropDownColor: "white"
+            color: Qt.rgba(1.0, 1.0, 1.0, 0.5)
+            dropDownColor: Qt.rgba(1.0, 1.0, 1.0, 0.5)
             borderColor: "transparent"
-            textColor: "black"
+            textColor: "white"
             arrowIcon: "images/arrow-down-black.png"
             arrowColor: "transparent"
             model: sessionModel
@@ -205,23 +210,32 @@ Rectangle {
             KeyNavigation.backtab: shutdown; KeyNavigation.tab: user_entry
         }
         
+        Timer {
+            id: timetr
+            interval: 100
+            running: true
+            repeat: true
+            onTriggered: {
+                timelb.text = Qt.formatDateTime(new Date(), "HH:mm");
+            }
+        }
         
-        /*Text {
-            id: time_label
-            anchors.centerIn: parent
-            //anchors.right: parent.right
+        Text {
+            id: timelb
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
             text: Qt.formatDateTime(new Date(), "dddd, dd MMMM yyyy HH:mm")
             color: "white"
-            font.pixelSize: 16
-        }*/
+            font.pixelSize: 18
+        }
         
     }
     
     Component.onCompleted: {
-        /*if (user_entry.text === "")
+        if (user_entry.text === "")
             user_entry.focus = true
         else
-            pw_entry.focus = true*/
-        pw_entry.focus = true
+            pw_entry.focus = true
+        //pw_entry.focus = true
     }
 }
