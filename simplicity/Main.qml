@@ -212,7 +212,7 @@ Rectangle {
             dropDownColor: Qt.rgba(0, 0, 0, 0.2)
             borderColor: "transparent"
             textColor: "white"
-            arrowIcon: "images/arrow-down-black.png"
+            arrowIcon: "images/arrow-down.png"
             arrowColor: "transparent"
             model: sessionModel
             index: sessionModel.lastIndex
