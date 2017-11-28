@@ -73,10 +73,10 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter
                             text: userModel.lastUser
                             font.pixelSize: 16
-                            color: Qt.rgba(1.0, 1.0, 1.0, 0.6)
+                            color: Qt.rgba(0, 0, 0, 0.2)
                             borderColor: "transparent"
-                            focusColor: Qt.rgba(1.0, 1.0, 1.0, 0.7)
-                            hoverColor: Qt.rgba(1.0, 1.0, 1.0, 0.6)
+                            focusColor: Qt.rgba(0, 0, 0, 0.25)
+                            hoverColor: Qt.rgba(0, 0, 0, 0.2)
                             textColor: "white"
                             
                             KeyNavigation.backtab: session; KeyNavigation.tab: pw_entry
@@ -107,10 +107,10 @@ Rectangle {
                             width: 250
                             anchors.verticalCenter: parent.verticalCenter;
                             font.pixelSize: 16
-                            color: Qt.rgba(1.0, 1.0, 1.0, 0.6)
+                            color: Qt.rgba(0, 0, 0, 0.2)
                             borderColor: "transparent"
-                            focusColor: Qt.rgba(1.0, 1.0, 1.0, 0.7)
-                            hoverColor: Qt.rgba(1.0, 1.0, 1.0, 0.6)
+                            focusColor: Qt.rgba(0, 0, 0, 0.25)
+                            hoverColor: Qt.rgba(0, 0, 0, 0.2)
                             textColor: "white"
                             focus: true
                             
@@ -132,9 +132,9 @@ Rectangle {
                             radius: 3
                             text: textConstants.login
                             width: 150
-                            color: Qt.rgba(1.0, 1.0, 1.0, 0.6)
-                            activeColor: Qt.rgba(1.0, 1.0, 1.0, 0.6)
-                            pressedColor: Qt.rgba(1.0, 1.0, 1.0, 0.65)
+                            color: Qt.rgba(0, 0, 0, 0.2)
+                            activeColor: Qt.rgba(0, 0, 0, 0.2)
+                            pressedColor: Qt.rgba(0, 0, 0, 0.25)
                             onClicked: sddm.login(user_entry.currentText, pw_entry.text, session.index)
                             KeyNavigation.backtab: pw_entry; KeyNavigation.tab: restart
                         }
@@ -160,9 +160,9 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
             text: textConstants.reboot
-            color: Qt.rgba(1.0, 1.0, 1.0, 0.5)
-            pressedColor: Qt.rgba(1.0, 1.0, 1.0, 0.55)
-            activeColor: Qt.rgba(1.0, 1.0, 1.0, 0.5)
+            color: Qt.rgba(0, 0, 0, 0.2)
+            pressedColor: Qt.rgba(0, 0, 0, 0.25)
+            activeColor: Qt.rgba(0, 0, 0, 0.2)
             radius: 3
             onClicked: sddm.reboot()
             KeyNavigation.backtab: loginButton; KeyNavigation.tab: shutdown
@@ -174,9 +174,9 @@ Rectangle {
             anchors.right: restart.left
             anchors.rightMargin: 10
             text: textConstants.shutdown
-            color: Qt.rgba(1.0, 1.0, 1.0, 0.5)
-            pressedColor: Qt.rgba(1.0, 1.0, 1.0, 0.55)
-            activeColor: Qt.rgba(1.0, 1.0, 1.0, 0.5)
+            color: Qt.rgba(0, 0, 0, 0.2)
+            pressedColor: Qt.rgba(0, 0, 0, 0.25)
+            activeColor: Qt.rgba(0, 0, 0, 0.2)
             radius: 3
             onClicked: sddm.powerOff()
             KeyNavigation.backtab: restart; KeyNavigation.tab: session
@@ -197,8 +197,8 @@ Rectangle {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
             width: 160
-            color: Qt.rgba(1.0, 1.0, 1.0, 0.5)
-            dropDownColor: Qt.rgba(1.0, 1.0, 1.0, 0.5)
+            color: Qt.rgba(0, 0, 0, 0.2)
+            dropDownColor: Qt.rgba(0, 0, 0, 0.2)
             borderColor: "transparent"
             textColor: "white"
             arrowIcon: "images/arrow-down-black.png"
