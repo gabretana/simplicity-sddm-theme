@@ -17,6 +17,8 @@ Rectangle {
         onLoginSucceeded: {}
         onLoginFailed: {
             pw_entry.text = ""
+            errorMessage.color = "red"
+            errorMessage.text = textConstants.loginFailed
         }
     }
     
@@ -105,7 +107,7 @@ Rectangle {
                             id: pw_entry
                             radius: 3
                             width: 250
-                            anchors.verticalCenter: parent.verticalCenter;
+                            anchors.verticalCenter: parent.verticalCenter
                             font.pixelSize: 16
                             color: Qt.rgba(0, 0, 0, 0.2)
                             borderColor: "transparent"
@@ -122,6 +124,15 @@ Rectangle {
                                     event.accepted = true
                                 }
                             }
+                        }
+                    }
+                    
+                    Row {
+                        Text {
+                            id: errorMessage
+                            anchors.verticalCenter: parent.verticalCenter
+                            text: ""
+                            font.pixelSize: 15
                         }
                     }
                     
