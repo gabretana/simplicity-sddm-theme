@@ -1,7 +1,7 @@
 ## Simplicity
 Simple SDDM theme
 
-![Screenshot](http://i.imgur.com/9gz8col.png)
+![Screenshot](https://i.imgur.com/yoZ9Odw.png)
 
 
 ### Install
