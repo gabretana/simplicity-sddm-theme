@@ -235,7 +235,7 @@ Rectangle {
             id: timelb
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
-            text: Qt.formatDateTime(new Date(), "dddd, dd MMMM yyyy HH:mm")
+            text: Qt.formatDateTime(new Date(), "HH:mm")
             color: "white"
             font.pixelSize: 18
         }
