@@ -231,14 +231,24 @@ Rectangle {
             }
         }
         
-        Text {
-            id: timelb
+        Rectangle {
+            color: Qt.rgba(0, 0, 0, 0.2)
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
-            text: Qt.formatDateTime(new Date(), "HH:mm")
-            color: "white"
-            font.pixelSize: 18
+            width: 60
+            height: parent.height - 15
+            radius: 4
+            
+            Text {
+                id: timelb
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+                text: Qt.formatDateTime(new Date(), "HH:mm")
+                color: "white"
+                font.pixelSize: 18
+            }
         }
+        
         
     }
     
