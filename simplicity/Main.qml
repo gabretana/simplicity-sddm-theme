@@ -167,19 +167,6 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         
         Button {
-            id: restart
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.right: parent.right
-            text: textConstants.reboot
-            color: Qt.rgba(0, 0, 0, 0.2)
-            pressedColor: Qt.rgba(0, 0, 0, 0.25)
-            activeColor: Qt.rgba(0, 0, 0, 0.2)
-            radius: 3
-            onClicked: sddm.reboot()
-            KeyNavigation.backtab: loginButton; KeyNavigation.tab: shutdown
-            }
-                    
-        Button {
             id: shutdown
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: restart.left
@@ -188,10 +175,23 @@ Rectangle {
             color: Qt.rgba(0, 0, 0, 0.2)
             pressedColor: Qt.rgba(0, 0, 0, 0.25)
             activeColor: Qt.rgba(0, 0, 0, 0.2)
-            radius: 3
+            radius: 4
             onClicked: sddm.powerOff()
             KeyNavigation.backtab: restart; KeyNavigation.tab: session
         }
+        
+        Button {
+            id: restart
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right
+            text: textConstants.reboot
+            color: Qt.rgba(0, 0, 0, 0.2)
+            pressedColor: Qt.rgba(0, 0, 0, 0.25)
+            activeColor: Qt.rgba(0, 0, 0, 0.2)
+            radius: 4
+            onClicked: sddm.reboot()
+            KeyNavigation.backtab: loginButton; KeyNavigation.tab: shutdown
+            }
         
     }
     
