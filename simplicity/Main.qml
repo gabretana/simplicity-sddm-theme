@@ -147,6 +147,7 @@ Rectangle {
                             color: Qt.rgba(0, 0, 0, 0.2)
                             activeColor: Qt.rgba(0, 0, 0, 0.2)
                             pressedColor: Qt.rgba(0, 0, 0, 0.25)
+                            font.pixelSize: 15
                             onClicked: sddm.login(user_entry.currentText, pw_entry.text, session.index)
                             KeyNavigation.backtab: pw_entry; KeyNavigation.tab: restart
                         }
@@ -176,6 +177,7 @@ Rectangle {
             color: Qt.rgba(0, 0, 0, 0.2)
             pressedColor: Qt.rgba(0, 0, 0, 0.25)
             activeColor: Qt.rgba(0, 0, 0, 0.2)
+            font.pixelSize: 15
             radius: 4
             onClicked: sddm.reboot()
             KeyNavigation.backtab: loginButton; KeyNavigation.tab: shutdown
@@ -189,6 +191,7 @@ Rectangle {
             color: Qt.rgba(0, 0, 0, 0.2)
             pressedColor: Qt.rgba(0, 0, 0, 0.25)
             activeColor: Qt.rgba(0, 0, 0, 0.2)
+            font.pixelSize: 15
             radius: 4
             onClicked: sddm.powerOff()
             KeyNavigation.backtab: restart; KeyNavigation.tab: session
