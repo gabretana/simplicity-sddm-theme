@@ -1,7 +1,7 @@
 ## Simplicity
 Simple SDDM theme
 
-![Screenshot](https://i.imgur.com/yoZ9Odw.png)
+![Screenshot](https://i.imgur.com/o1QDc26.png)
 
 
 ### Install
@@ -25,6 +25,9 @@ and change to
 
 #### ArchLinux
 From [AUR](https://aur.archlinux.org/packages/simplicity-sddm-theme-git/)
+
+#### Font
+Recommended font: Noto Sans
 
 If you use SDDM version 0.16 or above please read [this](https://github.com/sddm/sddm/wiki/0.16.0-Release-Announcement#configuration)
 
