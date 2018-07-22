@@ -30,8 +30,8 @@ FocusScope {
 
     property color color: "white"
     property color borderColor: "#ababab"
-    property color focusColor: "#266294"
-    property color hoverColor: "#5692c4"
+    property color focusColor: "white"
+    property color hoverColor: Qt.rgba(0, 0, 0, 0.6)
     property color textColor: "black"
     property color dropDownColor: "white"
     property font font
