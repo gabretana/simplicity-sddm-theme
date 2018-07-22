@@ -193,6 +193,7 @@ FocusScope {
                 anchors.horizontalCenter: parent ? parent.horizontalCenter : undefined;
                 color: container.hoverColor
             }
+            highlightMoveDuration: 0
         }
 
         Rectangle {
