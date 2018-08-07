@@ -149,7 +149,7 @@ Rectangle {
                             pressedColor: Qt.rgba(0, 0, 0, 0.25)
                             font.pixelSize: 15
                             font.bold: false
-                            onClicked: sddm.login(user_entry.currentText, pw_entry.text, session.index)
+                            onClicked: sddm.login(user_entry.text, pw_entry.text, session.index)
                             KeyNavigation.backtab: pw_entry; KeyNavigation.tab: restart
                         }
                     }
