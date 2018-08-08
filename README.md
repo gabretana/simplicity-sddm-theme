@@ -1,6 +1,8 @@
 ## Simplicity
 Simple SDDM theme
 
+## This repo is hosted on ![GitLab](https://gitlab.com/isseigx/simplicity-sddm-theme) now
+
 ![Screenshot](https://i.imgur.com/o1QDc26.png)
 
 
